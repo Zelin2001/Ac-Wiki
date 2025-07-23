@@ -1,6 +1,8 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 // 本文件运行于 Node.js - 请勿在此使用客户端代码（浏览器 API、JSX等）
 
@@ -29,8 +31,8 @@ const config: Config = {
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
-    defaultLocale: 'zh-Hans',
-    locales: ['zh-Hans'],
+    defaultLocale: 'zh-CN',
+    locales: ['zh-CN'],
   },
 
   presets: [
@@ -38,9 +40,15 @@ const config: Config = {
       'classic',
       {
         docs: {
-		  routeBasePath: '/', // 设置文档的根路径
+          routeBasePath: '/', // 设置文档的根路径
           sidebarPath: './sidebars.ts',
           // 指向仓库内的文档源代码
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [[rehypeKatex, {
+            strict: false,
+            output: 'html',
+            trust: true
+          }]],
           editUrl:
             'https://github.com/Ac-Wiki/Ac-Wiki/tree/docusaurus-site',
         },
@@ -97,7 +105,7 @@ const config: Config = {
           items: [
             {
               label: 'Tutorial',
-              to: '/docs/intro',
+              to: '/',
             },
           ],
         },
@@ -119,7 +127,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} Ac-Wiki<br>使用 <a href="https://docusaurus.io/zh-CN/">Docusaurus</a> 构建`,
+      copyright: `© ${new Date().getFullYear()} Ac-Wiki<br />使用 <a href="https://docusaurus.io/zh-CN/">Docusaurus</a> 构建`,
     },
     prism: {
       theme: prismThemes.github,

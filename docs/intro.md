@@ -1,11 +1,11 @@
 ---
-sidebar_position: 1
+sidebar_position: 0
 slug: /
 ---
 
 <div align="center">
   <a href="https://github.com/Ac-Wiki/Ac-Wiki">
-    <img src="./assets/logo_clear.png" alt="Ac-Wiki Logo" width="200"/>
+    <img src="/img/logo_clear.png" alt="Ac-Wiki Logo" width="200"/>
   </a>
 </div>
 
@@ -230,7 +230,7 @@ _由 Ac-Wiki 维护组及全体用户用 ❤️‍🔥 制作。欢迎您的参�
 
 本项目 CDN 加速及安全防护由 [Tencent EdgeOne](https://edgeone.ai/zh?from=github) 赞助
 
-![EdgeOne](./assets/TencentEdgeone.png)
+![EdgeOne](/img/TencentEdgeone.png)
 
 ---
 
